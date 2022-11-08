@@ -1,0 +1,29 @@
+{
+  "name": "keyword-scaning",
+  "version": "0.0.1",
+  "description": "keyword-scaning",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "ts-node test/index.ts",
+    "ncc": "ncc run test/index.ts",
+    "dev": "nodemon --watch src --watch test/index.ts -e ts,json test/index.ts",
+    "prebuild": "rm -rf dist",
+    "build": "ncc build src/index.ts -m -o dist",
+    "p": "yarn publish",
+    "prep": "yarn build"
+  },
+  "repository": "https://github.com/kajweb/keyword-scaning.git",
+  "author": "kajweb@163.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.7.16",
+    "@vercel/ncc": "^0.34.0",
+    "log4js": "^6.7.0",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.8.3"
+  }
+}
